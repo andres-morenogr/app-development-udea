@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-jumbotron bg-variant="yellow" text-variant="text" border-variant="dark" header="MORECADO LIBRE" lead="El mejor sitio para comprar en linea">
+    <b-jumbotron bg-variant="yellow" text-variant="text" header="MORECADO LIBRE" lead="El mejor sitio para comprar en linea">
     </b-jumbotron>
   </div>
 </template>
