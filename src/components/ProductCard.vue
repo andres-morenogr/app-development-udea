@@ -9,9 +9,8 @@
       style="max-width: 20rem;"
       class="mb-2"
     >
-      <b-card-text>Precio: {{product.price}}$ <br> Vendedor: {{product.price}}</b-card-text>
-
-      <b-button href="#" variant="primary">Go somewhere</b-button>
+      <b-card-text>Precio: {{product.price}}$</b-card-text>
+      <router-link :to="{ name: 'ProductDetail', params: { id: product.id } }">Ver Detalles</router-link>
     </b-card>
   </div>
 </template>

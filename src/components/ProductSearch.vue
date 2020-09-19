@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>
+    <div style="margin: auto;width: 250px;">
       <b-nav-form>
         <b-form-input size="sm" class="mr-sm-2" v-model="search" placeholder="Search"></b-form-input>
         <b-button size="sm" class="my-2 my-sm-0" v-on:click="executeSearch">Search</b-button>
@@ -8,7 +8,7 @@
     </div>
     <div>
       <b-row>
-        <b-col cols="4" v-for="product in products" v-bind:key="product.id">
+        <b-col cols="3" v-for="product in products" v-bind:key="product.id">
           <ProductCard v-bind:product="product"/>
         </b-col>
       </b-row>
@@ -19,6 +19,7 @@
         :total-rows="rows"
         :per-page="perPage"
         v-on:input="executeSearch"
+        align="center"
       ></b-pagination>
       <p class="mt-3">Current Page: {{ currentPage }}</p>
     </div>
@@ -33,8 +34,25 @@ export default {
   components: {
     ProductCard
   },
+  created () {
+      const requestUrl = `https://api.mercadolibre.com/sites/MCO/search?q=celular&offset=0&limit=${this.limit}`;
+      axios
+        .get(requestUrl)
+        .then(result => {
+          //Limited by the mercadolibre api
+          if (result.data.paging.total > 1000){
+            this.amountOfProducts = 1000 + this.limit;
+          }else {
+            this.amountOfProducts = result.data.paging.total;
+          }
+          this.products = result.data.results;
+        })
+        .catch(err => {
+          console.log(err);
+        });
+  },
   data: () => ({
-    searchQuery: "cosas",
+    searchQuery: "celular",
     amountOfProducts: 0,
     offset: 0,
     limit: 20,
@@ -54,7 +72,12 @@ export default {
       axios
         .get(requestUrl)
         .then(result => {
-          this.amountOfProducts = result.data.paging.total;
+          //Limited by the mercadolibre api
+          if (result.data.paging.total > 1000){
+            this.amountOfProducts = 1000 + this.limit;
+          }else {
+            this.amountOfProducts = result.data.paging.total;
+          }
           this.products = result.data.results;
         })
         .catch(err => {

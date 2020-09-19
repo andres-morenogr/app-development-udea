@@ -1,8 +1,6 @@
 <template>
   <div>
-    <b-jumbotron header="BootstrapVue" lead="Bootstrap v4 Components for Vue.js 2">
-      <p>For more information visit website</p>
-      <b-button variant="primary" href="#">More Info</b-button>
+    <b-jumbotron header="MORECADO LIBRE" lead="El mejor sitio para comprar en linea">
     </b-jumbotron>
   </div>
 </template>
