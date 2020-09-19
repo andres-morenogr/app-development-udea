@@ -6,7 +6,7 @@
       img-alt="Product Image"
       img-top
       tag="article"
-      style="max-width: 20rem;"
+      style="max-width: 10rem;"
       class="mb-2"
     >
       <b-card-text>Precio: {{product.price}}$</b-card-text>

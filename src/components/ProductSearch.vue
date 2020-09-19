@@ -7,6 +7,7 @@
       </b-nav-form>
     </div>
     <div>
+      <br>
       <b-row>
         <b-col cols="3" v-for="product in products" v-bind:key="product.id">
           <ProductCard v-bind:product="product"/>
