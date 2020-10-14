@@ -22,7 +22,7 @@
         v-on:input="executeSearch"
         align="center"
       ></b-pagination>
-      <p class="mt-3">Current Page: {{ currentPage }}</p>
+      <p class="mt-3">Página actual: {{ currentPage }}</p>
     </div>
   </div>
 </template>
