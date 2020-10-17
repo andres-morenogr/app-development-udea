@@ -2,7 +2,7 @@
   <div>
     <div style="margin: auto;width: 250px;">
       <b-nav-form>
-        <b-form-input size="sm" class="mr-sm-2" v-model="search" placeholder="Search"></b-form-input>
+        <b-form-input size="sm" class="mr-sm-2" v-model="searchQuery" placeholder="Search"></b-form-input>
         <b-button size="sm" class="my-2 my-sm-0" v-on:click="executeSearch">Search</b-button>
       </b-nav-form>
     </div>
