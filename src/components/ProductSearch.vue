@@ -53,7 +53,7 @@ export default {
         });
   },
   data: () => ({
-    searchQuery: "celular",
+    searchQuery: "",
     amountOfProducts: 0,
     offset: 0,
     limit: 20,
